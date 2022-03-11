@@ -7,7 +7,7 @@ const Weather = () => {
 
   useEffect(() => {
     const fetchApi = async () => {
-      const url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=021b23275bc91c5a0990b20a3534d644`;
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=021b23275bc91c5a0990b20a3534d644`;
       const response = await fetch(url);
       // console.log(response)
       const data = await response.json();
@@ -16,6 +16,8 @@ const Weather = () => {
     };
     fetchApi();
   }, [search]);
+
+  // https://cors-anywhere.herokuapp.com/
 
   // 3aa4d14585f612d4d9985f635651b21d
   // http://api.openweathermap.org/data/2.5/weather?q=Pune&appid=021b23275bc91c5a0990b20a3534d644
